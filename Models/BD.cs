@@ -33,10 +33,15 @@ public class BD{
         }
     }
 
-    public static List<Respuestas> obtenerRespuesta(List<Preguntas> preguntas){
+    public static List<Respuestas> ObtenerRespuestas(List<Preguntas> preguntas){
+        List<Respuestas> respuestas= new List<Respuestas>();
         using (SqlConnection BD = new SqlConnection(_connectionString)){
-        string query = "SELECT * FROM PREGUNTAS "
-        return BD.Query<Preguntas>(query,new{zIdCategoria=IdCategoria , zIdDificultad=IdDificultad}).ToList();
+        string query = "SELECT * FROM Respuestas WHERE idPregunta=@zidPregunta";
+        foreach (Preguntas a in preguntas)
+        {
+            
+        }
+        
         }
 
     }

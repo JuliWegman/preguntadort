@@ -5,4 +5,7 @@ public class Respuestas{
     static string texto {get; set;}
     static string foto {get; set;}
     static bool correcta {get; set;}
+    static Respuestas(){
+    
+    }
 }

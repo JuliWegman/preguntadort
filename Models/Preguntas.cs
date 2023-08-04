@@ -4,4 +4,7 @@ public class Preguntas{
     static int IdDificultad {get; set;}
     static string enunciado {get; set;}
     static string foto {get; set;}
+    static Preguntas(){
+        
+    }
 }
