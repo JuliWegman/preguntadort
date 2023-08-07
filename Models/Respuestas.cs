@@ -1,10 +1,10 @@
 public class Respuestas{
-    static int IdRespuesta {get; set;}
-    static int IdPregunta {get; set;}
-    static int opcion {get; set;}
-    static string texto {get; set;}
-    static string foto {get; set;}
-    static bool correcta {get; set;}
+    public int IdRespuesta {get; set;}
+    public int IdPregunta {get; set;}
+    public int opcion {get; set;}
+    public string texto {get; set;}
+    public string foto {get; set;}
+    public bool correcta {get; set;}
     static Respuestas(){
     
     }

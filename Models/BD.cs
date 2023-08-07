@@ -39,11 +39,10 @@ public class BD{
         string query = "SELECT * FROM Respuestas WHERE idPregunta=@zidPregunta";
         foreach (Preguntas a in preguntas)
         {
-            
+            respuestas.AddRange(BD.Query<Respuestas>(query,new{zidPregunta=a.IdPregunta}).ToList());
         }
-        
         }
-
+        return respuestas;
     }
 
 }

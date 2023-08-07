@@ -1,5 +1,28 @@
 ﻿@{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Axel Up";
+    Layout = "";
 }
 
-<h1>TP XX - Index</h1>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>@ViewData["Title"] - TPXX - Apellido</title>
+        <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    </head>
+    <body>
+        <div class="inicio">
+            <img src="logo" alt="Axel Up">
+
+            <div class="inicio__botones">
+                <a href='@Url.Action("")'><button class="inicio__comenzar">COMENZAR</button></a>
+                <a href='@Url.Action("")'><button class="inicio__puntaje">PUNTAJES</button></a>
+            </div>
+        </div>
+        <script src="~/js/site.js" asp-append-version="true"></script>
+        @* @await RenderSectionAsync("Scripts", required: false) *@
+    </body>
+</html>
+
+

@@ -1,21 +1,50 @@
+:root{
+  --rosa-2: #ff00ff;
+  --rosa-1: #ff66c4;
+  --celeste: #00ffff;
+  --negro: #3E192F;
+  --violeta: #8C52FF;
+  --violeta2: #CB6CE6;
+  --rojo: #FF5757;
+  --verde: #06D6A0;
+  --amarillo: #FFD166;
+  --rosa3: #FFC8DD;
+}
+
 html {
-  font-size: 14px;
-  position: relative;
-  min-height: 100%;
+  font-size: 62.5%;
 }
 
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body {
-  margin: 20px 60px 0px 20px;
+.inicio{
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
 }
 
-footer {
-  position: fixed; 
-  bottom: 0; 
-  margin: 10px 0px 20px 0px;
+.inicio__botones{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.inicio__comenzar{
+  width: 80rem;
+  height: 8rem;
+  font-size: 4rem;
+  margin-bottom: 5rem;
+}
+
+.inicio__puntaje{
+  width: 60rem;
+  height: 6rem;
+  font-size: 3rem;
 }

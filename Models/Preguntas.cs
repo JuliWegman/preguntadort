@@ -1,9 +1,9 @@
 public class Preguntas{
-    static int IdPregunta {get; set;}
-    static int IdCategoria {get; set;}
-    static int IdDificultad {get; set;}
-    static string enunciado {get; set;}
-    static string foto {get; set;}
+    public int IdPregunta {get; set;}
+    public int IdCategoria {get; set;}
+    public int IdDificultad {get; set;}
+    public string enunciado {get; set;}
+    public string foto {get; set;}
     static Preguntas(){
         
     }

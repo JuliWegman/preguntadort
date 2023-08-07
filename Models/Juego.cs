@@ -9,7 +9,7 @@ public class Juego{
     static public void InicializarJuego(){
     username="";
     puntajeActual=0;
-    cantidadPreguntasCorrectas=0;
+    cantidadPreguntasCorrectas=0; 
    }
    
    static public List<Categoria> ObtenerCategorias(){
@@ -35,6 +35,40 @@ public class Juego{
    }
    
    static public List<Respuestas> ObtenerProximasRespuestas(int IdPregunta){
-    
+      List <Respuestas> proximasRespuestas = new List<Respuestas>();
+      
+      foreach (Respuestas respuesta in lstRespuestas)
+      {
+         if (IdPregunta == respuesta.IdPregunta)
+         {
+            proximasRespuestas.Add(respuesta);
+         }
+      }
+      return proximasRespuestas;
    }
+
+
+   static public bool ComprobarRespuesta(int IdPregunta, int IdRespuesta){
+
+      int dificultad;
+      foreach (Preguntas p in lstPreguntas)
+      {
+         if (IdPregunta == p.IdPregunta)
+         {
+            lstPreguntas.Remove(p);
+         }
+      }
+      foreach (Respuestas r in lstRespuestas)
+      {
+         if (IdRespuesta == r.IdRespuesta && r.correcta == true)
+         {
+            Console.WriteLine("true");
+            return true;
+         }
+      }
+      return false;
+   }
+
+
 }
+
