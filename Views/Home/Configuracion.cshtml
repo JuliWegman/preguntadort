@@ -9,19 +9,22 @@
             <button class="config__boton" id="config__boton--random">Random</button>
         </div>
     </div>
-    <div class="config__categoria">
+    <div class="config__dificultad">
         <h2 class="config__titulo">Categoria</h2>
         <div class="config__botones">
             @foreach (Categoria c in ViewBag.categorias)
-            {   
-                <button class="config__boton" id="config__boton--">holaaa</button>
+            { 
+                <button class="config__boton" id="config__boton--@c.Nombre">@c.Nombre</button>
             }
             
         </div>
     </div>
     <div class="config__volumen">
         <h2 class="config__titulo">Volumen</h2>
-        <i class="fa-solid fa-volume-high"></i>
+        <div class="config__volumen--wrapper">
+            <i class="fa-solid fa-volume-high volumenIcono" id="volumen"></i>
+            <i class="fa-solid fa-volume-xmark volumenIcono hidden" id="volumen-mute"></i>
+        </div>
     </div>
     <div class="config__timer">
         <h2 class="config__titulo">Timer</h2>

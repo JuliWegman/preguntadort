@@ -1,4 +1,24 @@
-﻿// Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
+﻿const music = document.querySelector('audio');
+const icono = document.getElementById("volumen");
+const muted = document.getElementById("volumen-mute");
 
-// Write your JavaScript code.
+icono.addEventListener('click', mutear)
+muted.addEventListener('click', desmutear)
+
+
+function mutear(){
+    icono.classList.add("hidden");
+    muted.classList.remove("hidden");
+
+    music.muted = true;
+}
+
+function desmutear(){
+    icono.classList.remove("hidden");
+    muted.classList.add("hidden")
+
+    music.muted = false;
+
+}
+
+

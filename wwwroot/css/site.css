@@ -78,7 +78,7 @@ body{
   align-items: center;
 }
 
-.fa-volume-high{
+.volumenIcono{
   color: var(--rosa-2);
   font-size: 4rem;
   margin-bottom: 2rem;
@@ -160,6 +160,35 @@ body{
   align-self: flex-start;
 }
 
+.config__volumen{
+  display: flex;
+  flex-direction: column;
+}
+
+.config__volumen--wrapper{
+  display: flex;
+  align-items: center;
+}
+
+.hidden{
+  display: none;
+}
+
+/* .config__barra--container{
+  margin-left: 5rem;
+  background-color: var(--rosa-2);
+  height: 1.5rem;
+  width: 25rem;
+  border-radius: 10px;
+}
+
+.config__barra{
+  background-color: var(--rosa3);
+  border-radius: 5px;
+  height: 70%;
+  width: 0%;
+  transition: all 0.1s linear;
+} */
 
 .config__botones{
   display: flex;
@@ -191,6 +220,22 @@ body{
   background-color: var(--violeta2);
 }
 #config__boton--random{
+  background-color: var(--violeta);
+}
+
+#config__boton--Animales{
+  background-color: var(--rosa-1);
+}
+
+#config__boton--Cine{
+  background-color: var(--rosa-2);
+}
+
+#config__boton--Deportes{
+  background-color: var(--violeta2);
+}
+
+#config__boton--Random{
   background-color: var(--violeta);
 }
 
@@ -230,3 +275,4 @@ body{
 #config__boton-timer-off:disabled{
   filter: opacity(.7);
 }
+

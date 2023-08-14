@@ -9,14 +9,13 @@
             <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     </head>
     <body class="layout">
-
+        <audio autoplay loop>
+        <source src="~/img/tetris.mp3" type="audio/mp3">
+        </audio>
         <aside class="aside">
             <a href='@Url.Action("Index")'><img src="~/img/LogoAxel.png" class="aside__logo"></a>
             <div class="puntaje">15</div>
-            <div class="volumen">
-            <i class="fa-solid fa-volume-high"></i>
-            <div class="barra"></div>
-            </div>
+            
         </aside>
 
         <div class="juego">
