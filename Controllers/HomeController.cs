@@ -12,6 +12,7 @@ public class HomeController : Controller
     public IActionResult Configuracion()
     {
         Juego.InicializarJuego();
+        ViewBag.categorias = BD.ObtenerCategorias();
         return View();
     }
     public IActionResult Comenzar(string username){
