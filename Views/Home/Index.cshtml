@@ -27,8 +27,8 @@
 
         <div class="popup hidden" id="popup">
             <label for="nombre" class="popup__titulo">Ingresar Nombre</label>
-            <input type="text" name="nombre" class="popup__input"/>
-            <a href='@Url.Action("juego")'><button class="popup__boton">Iniciar</button></a>
+            <input type="text" name="nombre" placeholder="nombre" class="popup__input" />
+            <a href='@Url.Action("Comenzar")'><button class="popup__boton">Iniciar</button></a>
         </div>
                 <script src="~/js/inicio.js" asp-append-version="true"></script>
         @* @await RenderSectionAsync("Scripts", required: false) *@

@@ -1,4 +1,6 @@
 public class Dificultades{
-    static public int IdDificultad {get; set;}
+    public int IdDificultad {get; set;}
     string Nombre {get; set;}
+    static public int dificultadSeleccionada {get;set;}
+
 }

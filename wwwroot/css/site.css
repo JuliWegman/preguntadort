@@ -308,16 +308,16 @@ button{
   padding: 1.5rem;
   font-size: 1.2rem;
   background-color: var(--rosa-1);
-  border: 1px solid var(--celeste);
+  border: 1px solid var(--violeta);
 }
 
 .popup__boton{
-  border-radius: 2.5%;
+  border-radius: 5%;
   background-color: var(--violeta2);
   height: 10rem;
   border: none;
   cursor: pointer;
-  padding: 1.5rem 4rem;
+  padding: 1rem 5rem;
   box-shadow: inset 0 5px 5px 5px #0004;
   font-size: 2rem;
   font-family: inherit;

@@ -9,6 +9,19 @@ public class HomeController : Controller
         return View();
     }
 
+    public IActionResult ModificarCategoria(int cat){
+        Categoria.categoriaSeleccionada=cat;
+        return RedirectToAction("Configuracion");
+        Console.WriteLine(cat);
+    }
+
+    public IActionResult ModificarDificultad(int dif){
+        Dificultades.dificultadSeleccionada=dif;
+        return RedirectToAction("Configuracion");
+        Console.WriteLine(dif);
+
+    }
+
     public IActionResult Configuracion()
     {
         Juego.InicializarJuego();
@@ -21,7 +34,7 @@ public class HomeController : Controller
         return View();
     }
     public IActionResult Comenzar(string username){
-        Juego.CargarPartida(username,Dificultades.IdDificultad,Categoria.IdCategoria);
+        Juego.CargarPartida(username,Dificultades.dificultadSeleccionada,Categoria.categoriaSeleccionada);
 
         if(Juego.lstPreguntas.Count()!=0){
         return RedirectToAction("Jugar");

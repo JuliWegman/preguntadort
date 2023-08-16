@@ -14,7 +14,7 @@
         <div class="config__botones">
             @foreach (Categoria c in ViewBag.categorias)
             { 
-                <button class="config__boton" id="config__boton--@c.Nombre">@c.Nombre</button>
+                <button class="config__boton" id="config__boton--@c.Nombre" Action='@Url.Action("ModificarCategoria", new {cat=@c.IdCategoria})'>@c.Nombre</button>
             }
             
         </div>
