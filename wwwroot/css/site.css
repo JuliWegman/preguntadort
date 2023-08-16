@@ -33,6 +33,9 @@ body{
   font-family: 'Lexend Tera', sans-serif;
 }
 
+button{
+  font-family: 'Lexend Tera', sans-serif;
+}
 
 .layout{
   display: flex;
@@ -120,6 +123,10 @@ body{
   display: flex;
   flex-direction: column;
   text-align: center;
+  
+  cursor: pointer;
+  font-size: 1.5rem;
+  font-family: inherit;
 }
 
 
@@ -144,7 +151,7 @@ body{
 }
 
 .config{
-  padding:1% 3%;
+  padding:1.5% 3.5%;
 }
 
 .config__dificultad{
@@ -170,9 +177,7 @@ body{
   align-items: center;
 }
 
-.hidden{
-  display: none;
-}
+
 
 /* .config__barra--container{
   margin-left: 5rem;
@@ -276,3 +281,54 @@ body{
   filter: opacity(.7);
 }
 
+.popup{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: var(--rosa3);
+  width: 40%;
+  height: 30rem;
+  text-align: center;
+  position: absolute;
+  top: 30%;
+  left: 30%;
+  align-items: center;
+  border-radius: 15px;
+  box-shadow: 10px 15px 5px #0003;
+
+}
+.popup__titulo{
+  font-size: 1.8rem;
+  margin-top: 1rem;
+}
+.popup__input{
+  display: flex;
+  width: 60%;
+  outline: none;
+  padding: 1.5rem;
+  font-size: 1.2rem;
+  background-color: var(--rosa-1);
+  border: 1px solid var(--celeste);
+}
+
+.popup__boton{
+  border-radius: 2.5%;
+  background-color: var(--violeta2);
+  height: 10rem;
+  border: none;
+  cursor: pointer;
+  padding: 1.5rem 4rem;
+  box-shadow: inset 0 5px 5px 5px #0004;
+  font-size: 2rem;
+  font-family: inherit;
+  font-weight: 600;
+}
+
+.popup__boton:hover{
+  filter: brightness(1.1);
+}
+
+
+.hidden{
+  display: none;
+}

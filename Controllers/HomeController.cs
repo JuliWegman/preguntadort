@@ -46,4 +46,9 @@ public class HomeController : Controller
         return View("Respuesta");
     }
 
+    public IActionResult IngresarNombre(){
+        return View("");
+    }
+
+
 }
