@@ -3,10 +3,16 @@
     <div class="config__dificultad">
         <h2 class="config__titulo">Dificultad</h2>
         <div class="config__botones">
-            <button class="config__boton" id="config__boton--facil">Facil</button>
-            <button class="config__boton" id="config__boton--normal">Normal</button>
-            <button class="config__boton" id="config__boton--dificil">Dificil</button>
-            <button class="config__boton" id="config__boton--random">Random</button>
+            @foreach (Dificultades d in ViewBag.dificultades)
+            { 
+                @if(d.IdDificultad==Dificultades.dificultadSeleccionada){
+                   <button class="config__boton" id="config__boton--seleccionado" ><a href='@Url.Action("ModificarDificultad", new {dif=@d.IdDificultad})'>@d.Nombre</a></button>
+
+                }else{
+                 <button class="config__boton" id="config__boton--@d.Nombre" ><a href='@Url.Action("ModificarDificultad", new {dif=@d.IdDificultad})'>@d.Nombre</a></button>
+                }
+                
+            }
         </div>
     </div>
     <div class="config__dificultad">
@@ -14,7 +20,13 @@
         <div class="config__botones">
             @foreach (Categoria c in ViewBag.categorias)
             { 
-                <button class="config__boton" id="config__boton--@c.Nombre" Action='@Url.Action("ModificarCategoria", new {cat=@c.IdCategoria})'>@c.Nombre</button>
+                @if(c.IdCategoria==Categoria.categoriaSeleccionada){
+                    <button class="config__boton" id="config__boton--seleccionado" ><a href='@Url.Action("ModificarCategoria", new {cat=@c.IdCategoria})'>@c.Nombre</a></button>
+
+                }else{
+                 <button class="config__boton" id="config__boton--@c.Nombre" ><a href='@Url.Action("ModificarCategoria", new {cat=@c.IdCategoria})'>@c.Nombre</a></button>
+                }
+                
             }
             
         </div>

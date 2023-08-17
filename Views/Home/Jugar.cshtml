@@ -1,0 +1,10 @@
+<div>
+<h1>@ViewBag.preg.enunciado</h1>
+<div class="respuestas">
+@foreach (Respuestas r in ViewBag.resp) {
+    
+    <a href='@Url.Action("VerificarRespuesta",new{idPregunta=r.IdPregunta , idRespuesta=r.IdRespuesta} )'><button class="boton__respuesta">@r.texto</button></a>
+}
+</div>
+
+</div>

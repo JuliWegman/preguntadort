@@ -4,7 +4,7 @@ public class Preguntas{
     public int IdDificultad {get; set;}
     public string enunciado {get; set;}
     public string foto {get; set;}
-    static Preguntas(){
+    public Preguntas(){
         
     }
 }

@@ -17,19 +17,20 @@ public class BD{
             return BD.Query<Dificultades>(query).ToList();
         }
         }
+
         public static List<Preguntas> ObtenerPreguntas(int IdCategoria, int IdDificultad){
         using (SqlConnection BD = new SqlConnection(_connectionString)){
-            string query = "SELECT * FROM Preguntas";
-            if(IdCategoria != -1 && IdDificultad == -1 ){
+            string query = "SELECT * FROM Preguntas ";
+            if(IdCategoria != 4 && IdDificultad == 4 ){
                 query += "WHERE idCategoria = @zIdCategoria";
             }
-            else if(IdCategoria == -1 && IdDificultad != -1 ){
+            else if(IdCategoria == 4 && IdDificultad != 4 ){
                 query += "WHERE idDificultad = @zIdDificultad";
-            } else if (IdCategoria != -1 && IdDificultad != -1){
+            } else if (IdCategoria != 4 && IdDificultad != 4){
                 query += "WHERE idCategoria = @zIdCategoria AND idDificultad = @zIdDificultad";
             }
 
-            return BD.Query<Preguntas>(query,new{zIdCategoria=IdCategoria , zIdDificultad=IdDificultad}).ToList();
+            return BD.Query<Preguntas>(query,new{zIdCategoria=IdCategoria,zIdDificultad=IdDificultad}).ToList();
         }
     }
 

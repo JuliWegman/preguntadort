@@ -6,34 +6,42 @@ public class HomeController : Controller
 {
     public IActionResult Index()
     {
+        Console.WriteLine(Categoria.categoriaSeleccionada);
+        Juego.InicializarJuego();
+
         return View();
     }
 
     public IActionResult ModificarCategoria(int cat){
         Categoria.categoriaSeleccionada=cat;
-        return RedirectToAction("Configuracion");
-        Console.WriteLine(cat);
+        List<Categoria> listaCategorias=BD.ObtenerCategorias();
+        ViewBag.categorias = listaCategorias;
+        List<Dificultades> listaDificultades=BD.ObtenerDificultades();
+        ViewBag.dificultades = listaDificultades;
+        return View("Configuracion");
+        
     }
 
     public IActionResult ModificarDificultad(int dif){
         Dificultades.dificultadSeleccionada=dif;
-        return RedirectToAction("Configuracion");
-        Console.WriteLine(dif);
+        List<Categoria> listaCategorias=BD.ObtenerCategorias();
+        ViewBag.categorias = listaCategorias;
+        List<Dificultades> listaDificultades=BD.ObtenerDificultades();
+        ViewBag.dificultades = listaDificultades;
+        return View("Configuracion");
 
     }
 
     public IActionResult Configuracion()
     {
-        Juego.InicializarJuego();
         List<Categoria> listaCategorias=BD.ObtenerCategorias();
         ViewBag.categorias = listaCategorias;
-        foreach (Categoria item in listaCategorias)
-        {
-            Console.WriteLine(item.Nombre);
-        }
+        List<Dificultades> listaDificultades=BD.ObtenerDificultades();
+        ViewBag.dificultades = listaDificultades;
         return View();
     }
     public IActionResult Comenzar(string username){
+        Console.WriteLine(Dificultades.dificultadSeleccionada);
         Juego.CargarPartida(username,Dificultades.dificultadSeleccionada,Categoria.categoriaSeleccionada);
 
         if(Juego.lstPreguntas.Count()!=0){
@@ -46,9 +54,11 @@ public class HomeController : Controller
 
         if(Juego.lstPreguntas.Count()!=0){
         Preguntas prox =Juego.ObtenerProximaPregunta();
+        Console.WriteLine(prox.IdPregunta);
         List<Respuestas> listaRespuestas=Juego.ObtenerProximasRespuestas(prox.IdPregunta);
         ViewBag.preg=prox;
         ViewBag.resp=listaRespuestas;
+        Console.WriteLine(listaRespuestas.Count());
         return View();
         }else{
         return RedirectToAction("Fin");
@@ -57,10 +67,6 @@ public class HomeController : Controller
     public IActionResult VerificarRespuesta(int idPregunta, int idRespuesta){
         ViewBag.gano=Juego.ComprobarRespuesta(idPregunta,idRespuesta);
         return View("Respuesta");
-    }
-
-    public IActionResult IngresarNombre(){
-        return View("");
     }
 
 

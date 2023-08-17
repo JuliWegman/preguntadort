@@ -20,7 +20,8 @@ public class Juego{
     return BD.ObtenerDificultades();
    }
 
-   static public void CargarPartida(string username, int dificultad, int categoria){
+   static public void CargarPartida(string User, int dificultad, int categoria){
+      username=User;
     lstPreguntas=BD.ObtenerPreguntas(categoria,dificultad);
     lstRespuestas=BD.ObtenerRespuestas(lstPreguntas);
    }
@@ -48,20 +49,23 @@ public class Juego{
    }
 
 
-   static public bool ComprobarRespuesta(int IdPregunta, int IdRespuesta){
+   static public bool ComprobarRespuesta(int preg, int resp){
 
-      int dificultad;
-      foreach (Preguntas p in lstPreguntas)
+    Preguntas x=null;
+      foreach(Preguntas p in lstPreguntas)
       {
-         if (IdPregunta == p.IdPregunta)
+         if (preg == p.IdPregunta)
          {
-            lstPreguntas.Remove(p);
+            x=p;
+            
          }
       }
-      foreach (Respuestas r in lstRespuestas)
+      lstPreguntas.Remove(x);
+      foreach(Respuestas r in lstRespuestas)
       {
-         if (IdRespuesta == r.IdRespuesta && r.correcta == true)
+         if (resp == r.IdRespuesta && r.correcta == true)
          {
+            puntajeActual +=5;
             Console.WriteLine("true");
             return true;
          }
