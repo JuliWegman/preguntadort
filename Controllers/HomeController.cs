@@ -68,6 +68,15 @@ public class HomeController : Controller
         ViewBag.gano=Juego.ComprobarRespuesta(idPregunta,idRespuesta);
         return View("Respuesta");
     }
+    public IActionResult Fin(){
+        return View();
+    }
+
+    public IActionResult Puntajes(){
+
+
+        return View();
+    }
 
 
 }

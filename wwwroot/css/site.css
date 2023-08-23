@@ -356,7 +356,64 @@ button{
   filter: brightness(1.1);
 }
 
-
 .hidden{
   display: none;
+}
+
+.Respuesta__correcta{
+  background-color: var(--verde);
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  font-size: 4rem;
+  cursor: pointer;
+}
+
+
+
+.Respuesta__incorrecta{
+  background-color: var(--rojo);
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 4rem;
+  cursor: pointer;
+  flex-direction: column;
+}
+
+.Fin{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  font-size: 4rem;
+  cursor: pointer;
+}
+.Fin__inicio{
+  width: 80rem;
+  height: 15rem;
+  font-size: 4rem;
+  margin-bottom: 5rem;
+  background-color: var(--violeta2);
+  border-radius: 10px;
+  box-shadow: var(--shadow-botones);
+}
+
+.puntajes{
+  color: var(--rosa3);
+  background-color: var(--negro);
+  display: grid;
+  grid-template-columns:repeat(3) 1fr;
+  grid-row: 3fr 1fr 1fr;
+  grid-auto-columns: none;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.puntajes__titulos{
+
 }

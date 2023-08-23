@@ -2,14 +2,12 @@ public class Juego{
 
    static public string username {get;set;}
    static public int puntajeActual {get;set;}
-   static public int cantidadPreguntasCorrectas {get;set;}
    static public List<Preguntas> lstPreguntas {get;set;}
    static public List<Respuestas> lstRespuestas {get;set;}
 
     static public void InicializarJuego(){
     username="";
     puntajeActual=0;
-    cantidadPreguntasCorrectas=0; 
    }
    
    static public List<Categoria> ObtenerCategorias(){
@@ -65,7 +63,7 @@ public class Juego{
       {
          if (resp == r.IdRespuesta && r.correcta == true)
          {
-            puntajeActual +=5;
+            Juego.puntajeActual +=5;
             Console.WriteLine("true");
             return true;
          }
