@@ -6,9 +6,7 @@ public class HomeController : Controller
 {
     public IActionResult Index()
     {
-        Console.WriteLine(Categoria.categoriaSeleccionada);
         Juego.InicializarJuego();
-
         return View();
     }
 
@@ -40,9 +38,9 @@ public class HomeController : Controller
         ViewBag.dificultades = listaDificultades;
         return View();
     }
-    public IActionResult Comenzar(string username){
-        Console.WriteLine(Dificultades.dificultadSeleccionada);
-        Juego.CargarPartida(username,Dificultades.dificultadSeleccionada,Categoria.categoriaSeleccionada);
+    public IActionResult Comenzar(string nombre){
+        Juego.CargarPartida(nombre,Dificultades.dificultadSeleccionada,Categoria.categoriaSeleccionada);
+        Console.WriteLine(nombre);
 
         if(Juego.lstPreguntas.Count()!=0){
         return RedirectToAction("Jugar");
@@ -54,11 +52,9 @@ public class HomeController : Controller
 
         if(Juego.lstPreguntas.Count()!=0){
         Preguntas prox =Juego.ObtenerProximaPregunta();
-        Console.WriteLine(prox.IdPregunta);
         List<Respuestas> listaRespuestas=Juego.ObtenerProximasRespuestas(prox.IdPregunta);
         ViewBag.preg=prox;
         ViewBag.resp=listaRespuestas;
-        Console.WriteLine(listaRespuestas.Count());
         return View();
         }else{
         return RedirectToAction("Fin");
@@ -69,12 +65,17 @@ public class HomeController : Controller
         return View("Respuesta");
     }
     public IActionResult Fin(){
+        BD.AgregarPuntaje(Juego.puntajeActual,Juego.username);
         return View();
     }
 
     public IActionResult Puntajes(){
-
-
+        int ultimoPuntaje = BD.ObtenerUltimoPuntaje();
+        ViewBag.lstPuntajes = BD.ObtenerPuntajes();
+        if (ultimoPuntaje != null)
+        {
+            ViewBag.ultimoPuntaje = ultimoPuntaje;
+        }
         return View();
     }
 

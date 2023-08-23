@@ -404,16 +404,31 @@ button{
 }
 
 .puntajes{
-  color: var(--rosa3);
   background-color: var(--negro);
-  display: grid;
-  grid-template-columns:repeat(3) 1fr;
-  grid-row: 3fr 1fr 1fr;
-  grid-auto-columns: none;
-  gap: 2rem;
   padding: 2rem;
+  font-size: 2.2rem;
+  height: 100%;
 }
 
-.puntajes__titulos{
+.invisible{
+  opacity: 0;
+}
 
+.puntajes__grupo{
+  display: flex;
+  margin-bottom: 4rem;
+  color: var(--rosa3);
+}
+
+.puntajes__titulo{
+  width: 25%;
+}
+
+.puntajes__posicion{
+  width: 50%;
+
+}
+
+.amarillo{
+  color: var(--amarillo);
 }
