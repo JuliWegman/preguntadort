@@ -12,6 +12,7 @@ function mutear(){
     muted.classList.remove("hidden");
 
     music.muted = true;
+    
 }
 
 function desmutear(){
@@ -19,7 +20,6 @@ function desmutear(){
     muted.classList.add("hidden");
 
     music.muted = false;
-
 }
 
 

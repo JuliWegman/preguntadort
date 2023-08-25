@@ -1,10 +1,16 @@
-let tiempo = 10;
+let tiempo = 9;
+const timer = document.getElementById("timer");
 
-setInterval(() => {
-    console.log(tiempo);
+let intervalo = setInterval(() => {
+    timer.innerText = tiempo;
     if (tiempo > 0) {
         tiempo--;
+    } else {
+        window.location.href = '/Home/VerificarRespuesta?idPregunta=2&idRespuesta=2';
+        terminarIntervalo();
     }
-    else clearInterval();
+}, 1000);
 
-} ,1000)
+const terminarIntervalo = () => {
+    clearInterval(intervalo);
+};

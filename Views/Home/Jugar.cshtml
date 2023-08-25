@@ -1,11 +1,15 @@
 <div class="pregunta">
-<h1 class="pregunta__titulo">@ViewBag.preg.enunciado</h1>
+<div class="pregunta__header">
+    <h1 class="pregunta__titulo">@ViewBag.preg.enunciado</h1>
+    <h3 id="timer">10</h3>
+</div>
 <div class="pregunta__respuestas">
 
 @foreach (Respuestas r in ViewBag.resp) {
     
     <a href='@Url.Action("VerificarRespuesta",new{idPregunta=r.IdPregunta , idRespuesta=r.IdRespuesta} )'><button class="pregunta__boton" id="pregunta__boton--@ViewBag.Resp.IndexOf(r)">@r.texto</button></a>
 }
+
 </div>
 
 </div>

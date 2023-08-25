@@ -431,7 +431,7 @@ button{
 
 .puntajes__posicion{
   width: 50%;
-
+  text-align: center;
 }
 
 .amarillo{
@@ -449,6 +449,16 @@ button{
 .pregunta__titulo{
   font-size: 2.2rem;
   font-weight: 500;
+}
+
+.pregunta__header{
+  display: flex;
+  justify-content: space-between;
+}
+
+#timer{
+  font-size: 4rem;
+  color: var(--negro);
 }
 
 .pregunta__respuestas{

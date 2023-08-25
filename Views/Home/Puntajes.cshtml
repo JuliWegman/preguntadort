@@ -14,13 +14,13 @@
 
         if(p.idPuntaje == ViewBag.ultimoPuntaje){
             <div class="puntajes__grupo amarillo">
-                <h2 class="puntajes__posicion invisible">@ViewBag.lstPuntajes.IndexOf(p)</h2>
+                <h2 class="puntajes__posicion">@(ViewBag.lstPuntajes.IndexOf(p) +1)°</h2>
                 <h2 class="puntajes__titulo">@p.Numero</h2>
                 <h2 class="puntajes__titulo">@p.Nombre</h2>
             </div>            
         } else{
             <div class="puntajes__grupo">
-                <h2 class="puntajes__posicion invisible">@ViewBag.lstPuntajes.IndexOf(p)</h2>
+                <h2 class="puntajes__posicion">@(ViewBag.lstPuntajes.IndexOf(p) +1)°</h2>
                 <h2 class="puntajes__titulo">@p.Numero</h2>
                 <h2 class="puntajes__titulo">@p.Nombre</h2>
             </div>

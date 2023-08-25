@@ -39,6 +39,11 @@ public class HomeController : Controller
         return View();
     }
     public IActionResult Comenzar(string nombre){
+        Console.WriteLine(nombre);
+        if(nombre == null){
+            nombre = "Jugador";
+        }
+
         Juego.CargarPartida(nombre,Dificultades.dificultadSeleccionada,Categoria.categoriaSeleccionada);
         Console.WriteLine(nombre);
 
@@ -49,7 +54,6 @@ public class HomeController : Controller
         }
     }
     public IActionResult Jugar(){
-
         if(Juego.lstPreguntas.Count()!=0){
         Preguntas prox =Juego.ObtenerProximaPregunta();
         List<Respuestas> listaRespuestas=Juego.ObtenerProximasRespuestas(prox.IdPregunta);
