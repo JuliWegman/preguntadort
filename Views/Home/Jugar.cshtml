@@ -1,10 +1,13 @@
-<div>
-<h1>@ViewBag.preg.enunciado</h1>
-<div class="respuestas">
+<div class="pregunta">
+<h1 class="pregunta__titulo">@ViewBag.preg.enunciado</h1>
+<div class="pregunta__respuestas">
+
 @foreach (Respuestas r in ViewBag.resp) {
     
-    <a href='@Url.Action("VerificarRespuesta",new{idPregunta=r.IdPregunta , idRespuesta=r.IdRespuesta} )'><button class="boton__respuesta">@r.texto</button></a>
+    <a href='@Url.Action("VerificarRespuesta",new{idPregunta=r.IdPregunta , idRespuesta=r.IdRespuesta} )'><button class="pregunta__boton" id="pregunta__boton--@ViewBag.Resp.IndexOf(r)">@r.texto</button></a>
 }
 </div>
 
 </div>
+<script src="~/js/pregunta.js"></script>
+

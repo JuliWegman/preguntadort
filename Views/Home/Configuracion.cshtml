@@ -6,10 +6,10 @@
             @foreach (Dificultades d in ViewBag.dificultades)
             { 
                 @if(d.IdDificultad==Dificultades.dificultadSeleccionada){
-                   <button class="config__boton" id="config__boton--seleccionado" ><a href='@Url.Action("ModificarDificultad", new {dif=@d.IdDificultad})'>@d.Nombre</a></button>
+                   <a href='@Url.Action("ModificarDificultad", new {dif=@d.IdDificultad})'><button class="config__boton config__boton--@d.Nombre" id="config__boton--seleccionado" >@d.Nombre</button></a>
 
                 }else{
-                 <button class="config__boton" id="config__boton--@d.Nombre" ><a href='@Url.Action("ModificarDificultad", new {dif=@d.IdDificultad})'>@d.Nombre</a></button>
+                 <a href='@Url.Action("ModificarDificultad", new {dif=@d.IdDificultad})'><button class="config__boton config__boton--@d.Nombre">@d.Nombre</button></a>
                 }
                 
             }
@@ -21,10 +21,10 @@
             @foreach (Categoria c in ViewBag.categorias)
             { 
                 @if(c.IdCategoria==Categoria.categoriaSeleccionada){
-                    <button class="config__boton" id="config__boton--seleccionado" ><a href='@Url.Action("ModificarCategoria", new {cat=@c.IdCategoria})'>@c.Nombre</a></button>
+                    <a href='@Url.Action("ModificarCategoria", new {cat=@c.IdCategoria})'><button class="config__boton config__boton--@c.Nombre" id="config__boton--seleccionado" >@c.Nombre</button></a>
 
                 }else{
-                 <button class="config__boton" id="config__boton--@c.Nombre" ><a href='@Url.Action("ModificarCategoria", new {cat=@c.IdCategoria})'>@c.Nombre</a></button>
+                 <a href='@Url.Action("ModificarCategoria", new {cat=@c.IdCategoria})'><button class="config__boton config__boton--@c.Nombre" >@c.Nombre</button></a>
                 }
                 
             }
