@@ -14,8 +14,11 @@
         </audio>
         <aside class="aside">
             <a href='@Url.Action("Index")'><img src="~/img/LogoAxel.png" class="aside__logo"></a>
-            <div class="puntaje">@Juego.puntajeActual</div>
             
+            <div class="puntaje__wrapper">
+            <h4 class="puntaje__titulo">Puntaje</h4>
+            <div class="puntaje">@Juego.puntajeActual</div>
+            </div>
         </aside>
 
         <div class="juego">

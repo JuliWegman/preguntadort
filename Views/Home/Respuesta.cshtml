@@ -1,17 +1,19 @@
 @if(ViewBag.gano){
-    <a href='@Url.Action("Jugar")'>
-    <div class="Respuesta__correcta">
-        <h1>Correcto!</h1>
-        <p>Click para continuar</p>  
-    </div>
-    </a> 
+<a href='@Url.Action("Jugar")'>
+<div class="Respuesta__correcta">
+<h1>Correcto!</h1>
+<p>Click para continuar</p>
+</div>
+</a>
 }else{
-    <a href='@Url.Action("Fin")'>
-    <div class="Respuesta__incorrecta">
-    <h1>Incorrecto! :/</h1>
-    <p>Click para volver al inicio</p>  
-    </div>
-    </a>
+<a href='@Url.Action("Fin")'>
+<div class="Respuesta__incorrecta">
+<h1>Incorrecto! :/</h1>
+<h3>La respuesta correcta era </h3>
+<h3>@ViewBag.correcta</h3>
+
+<p>Click para volver al inicio</p>
+
+</div>
+</a>
 }
-
-

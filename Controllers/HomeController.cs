@@ -7,6 +7,17 @@ public class HomeController : Controller
     public IActionResult Index()
     {
         Juego.InicializarJuego();
+        foreach(Categoria c in BD.ObtenerCategorias()){
+            if(c.IdCategoria == Categoria.categoriaSeleccionada){
+                ViewBag.categoria = c.Nombre;
+            }
+        }
+
+        foreach(Dificultades d in BD.ObtenerDificultades()){
+            if(d.IdDificultad == Dificultades.dificultadSeleccionada){
+                ViewBag.Dificultad = d.Nombre;
+            }
+        }
         return View();
     }
 
@@ -64,8 +75,10 @@ public class HomeController : Controller
         return RedirectToAction("Fin");
         }
     }
-    public IActionResult VerificarRespuesta(int idPregunta, int idRespuesta){
+    public IActionResult VerificarRespuesta(int idPregunta, int idRespuesta, string correct){
+        Console.WriteLine(correct);
         ViewBag.gano=Juego.ComprobarRespuesta(idPregunta,idRespuesta);
+        ViewBag.correcta=correct;
         return View("Respuesta");
     }
     public IActionResult Fin(){

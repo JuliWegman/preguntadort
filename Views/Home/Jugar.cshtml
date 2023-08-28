@@ -1,17 +1,23 @@
 <div class="pregunta">
 <div class="pregunta__header">
-    <h1 class="pregunta__titulo">@ViewBag.preg.enunciado</h1>
-    <h3 id="timer">10</h3>
+<h1 class="pregunta__titulo">@ViewBag.preg.enunciado</h1>
+<h3 id="timer">10</h3>
 </div>
 <div class="pregunta__respuestas">
+@{string xx="";
+foreach (Respuestas r in ViewBag.resp) {
+if(r.correcta){
+xx=r.texto;
 
-@foreach (Respuestas r in ViewBag.resp) {
-    
-    <a href='@Url.Action("VerificarRespuesta",new{idPregunta=r.IdPregunta , idRespuesta=r.IdRespuesta} )'><button class="pregunta__boton" id="pregunta__boton--@ViewBag.Resp.IndexOf(r)">@r.texto</button></a>
 }
+}
+foreach (Respuestas r in ViewBag.resp) {
+<a href='@Url.Action("VerificarRespuesta",new{idPregunta=r.IdPregunta , idRespuesta=r.IdRespuesta,correct=xx} )'><button class="pregunta__boton" id="pregunta__boton--@ViewBag.Resp.IndexOf(r)">@r.texto</button></a>
+}
+}
+
 
 </div>
 
 </div>
 <script src="~/js/pregunta.js"></script>
-
